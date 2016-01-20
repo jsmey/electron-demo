@@ -1,5 +1,5 @@
 module.exports = function(){
   return{
-      form : { submitted: false, data: {}, dataList: []}
+      form : { submitted: false, data: {}, dataList: [{name: 'John', surName: 'Test'}]}
   };
 };
