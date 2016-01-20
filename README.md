@@ -1,4 +1,4 @@
-# electron-react-boilerplate
+# electron-react-demo
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
@@ -111,11 +111,4 @@ If you want to have native-like User Interface (OS X El Capitan and Windows 10),
 
 
 ## License
-MIT © [C. T. Lin](https://github.com/chentsulin)
-
-[npm-image]: https://img.shields.io/npm/v/electron-react-boilerplate.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/electron-react-boilerplate
-[travis-image]: https://travis-ci.org/chentsulin/electron-react-boilerplate.svg?branch=master
-[travis-url]: https://travis-ci.org/chentsulin/electron-react-boilerplate
-[david_img]: https://img.shields.io/david/chentsulin/electron-react-boilerplate.svg
-[david_site]: https://david-dm.org/chentsulin/electron-react-boilerplate
+MIT © [C. T. Lin]
