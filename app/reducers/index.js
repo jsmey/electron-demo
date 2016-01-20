@@ -3,8 +3,7 @@ import counter from './counter';
 import form from './form';
 
 const rootReducer = combineReducers({
-  counter,
-  form
+  form : form
 });
 
 export default rootReducer;

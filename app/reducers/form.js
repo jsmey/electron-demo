@@ -1,16 +1,14 @@
 import { SAVED_FORM, RECEIVED_DATA  } from '../actions/form';
 import util from 'util';
-
-var initialState = {
-data:{}, submitted:false, dataList:[]
-}
-export default function form(state=initialState, action) {
+import initialState from '../store/initialState';
+import _ from 'lodash';
+export default function form(state=initialState(), action) {
   switch (action.type) {
     case SAVED_FORM:
-        return action.form;
+        return _.cloneDeep(state);
     case RECEIVED_DATA:
-        return action.form;
+        return state.form;
     default:
-      return state;
+      return state.form || state;
   }
 }

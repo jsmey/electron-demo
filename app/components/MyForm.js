@@ -41,7 +41,7 @@ class MyForm extends Component {
 
       </div>
       <div>
-      {util.inspect(data)}
+      {util.inspect(this.props.data)}
       </div>
       </div>
     );

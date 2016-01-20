@@ -2,16 +2,17 @@ export const SAVED_FORM = 'SAVED_FORM';
 export const RECEIVED_DATA = 'RECEIVED_DATA';
 import util from 'util';
 
-export function save(data) {
+export function save(form) {
+  form.submitted = true;
   return {
-    form:{ data: data, submitted: true},
+    form: form,
     type: SAVED_FORM
   };
 }
 
-export function receivedData(data) {
+export function receivedData(list) {
   return {
-    form: {dataList: data},
+    form: {dataList: data, submitted:false, data: {}},
     type: RECEIVED_DATA
   };
 }
@@ -19,11 +20,8 @@ export function receivedData(data) {
 export function getList() {
   return (dispatch, getState) => {
     setTimeout(() => {
-        var data = [
-          {name:'john', surname:'s'},
-          {name:'Lynn', surname: 'w'}
-        ];
-        dispatch(receivedData(data));
+        var list = getState().form.dataList;
+        dispatch(receivedData(list));
     }, 5);
   };
 }
@@ -34,7 +32,13 @@ export function saveForm(data) {
       setTimeout(() => {
           console.log('in action ' + util.inspect(data));
           console.log('getstate::' + util.inspect(getState()));
-          dispatch(save(data));
+          var form = getState().form;
+          form.dataList.push(data);
+          form.submitted = true;
+          form.data = data;
+
+
+          dispatch(save(form));
       }, 5);
   };
 }

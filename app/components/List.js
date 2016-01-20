@@ -27,7 +27,11 @@ class List extends Component {
           <br/><br/><br/>
             <button onClick={() => getList()}>Load</button>
             <div className={"dataList"}>
-                {util.inspect(dataList)}
+            <ul>
+              {this.props.dataList.map(function(listValue, i){
+                return <li key={i}>{util.inspect(listValue)}</li>;
+              })}
+            </ul>
 
             </div>
             </div>
